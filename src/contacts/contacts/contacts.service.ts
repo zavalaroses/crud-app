@@ -22,4 +22,9 @@ export class ContactsService {
     async delete(id):Promise<DeleteResult>{
         return await this.contactRepository.delete(id);
     }
+    async findOne(contactId):Promise<Contact>{
+        return await this.contactRepository.findOne(
+            { where:{ id:contactId }}
+        );
+    }
 }
